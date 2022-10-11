@@ -6,20 +6,21 @@
 # - 7 -> да
 # - 1 -> нет
 
-# n_day = int(input('введите номер дня: '))
-#
-# if 0 < n_day < 8:
-#     print('да')
-# else:
-#     print('нет')
+n_day = int(input('введите номер дня: '))
+
+if 5 < n_day < 8:
+    print('да')
+else:
+    print('нет')
 
 
 # Напишите программу для проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
 
-for x in [True,False]:
-    for y in [True,False]:
-        for z in [True,False]:
-            print(x,'AND',y,'OR',z,'=',x and y or z)
+for x in (0, 1):
+    for y in (0, 1):
+        for z in (0, 1):
+            print(x, y, z, end=' : ')
+            print(not(x or y or z) == (not x and not y and not z))
 
 
 # Напишите программу, которая принимает на вход координаты точки (X и Y), причём X ≠ 0 и Y ≠ 0 и выдаёт номер четверти плоскости, в которой находится эта точка (или на какой оси она находится).
@@ -31,32 +32,32 @@ for x in [True,False]:
 # - x=-34; y=-30 -> 3
 
 
-# x = int(input('x = '))
-# y = int(input('y = '))
-# if x > 0 and y > 0:
-#     print(f'x={x}, y={y} -> 1 четверть')
-# elif x<0 and y>0:
-#     print(f'x={x}, y={y} -> 2 четверть')
-# elif x<0 and y<0:
-#     print(f'x={x}, y={y} -> 3 четверть')
-# elif x>0 and y<0:
-#     print(f'x={x}, y={y} -> 4 четверть')
-# else:
-#     print(f'x={x}, y={y} -> середина системы координат')
+x = int(input('x = '))
+y = int(input('y = '))
+if x > 0 and y > 0:
+    print(f'x={x}, y={y} -> 1 четверть')
+elif x<0 and y>0:
+    print(f'x={x}, y={y} -> 2 четверть')
+elif x<0 and y<0:
+    print(f'x={x}, y={y} -> 3 четверть')
+elif x>0 and y<0:
+    print(f'x={x}, y={y} -> 4 четверть')
+else:
+    print(f'x={x}, y={y} -> середина системы координат')
 
 # Напишите программу, которая по заданному номеру четверти, показывает диапазон возможных координат точек в этой четверти (x и y).
 
-# ch = int(input('Введите номер четверти: '))
-# if ch == 1:
-#     print('x > 0 и y > 0')
-# elif ch == 2:
-#     print('x<0, а y>0')
-# elif ch == 3:
-#     print ('x<0 и y<0')
-# elif ch == 4:
-#     print('x>0, a y<0')
-# else:
-#     print('x=0 и y=0')
+ch = int(input('Введите номер четверти: '))
+if ch == 1:
+    print('x > 0 и y > 0')
+elif ch == 2:
+    print('x<0, а y>0')
+elif ch == 3:
+    print ('x<0 и y<0')
+elif ch == 4:
+    print('x>0, a y<0')
+else:
+    print('x=0 и y=0')
 
 # Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 2D пространстве.
 #
@@ -64,13 +65,13 @@ for x in [True,False]:
 #
 # - A (3,6); B (2,1) -> 5,09
 
-# print('Введите координаты точки A: ')
-# x_a = int(input('x = '))
-# y_a = int(input('y = '))
-# print('Введите координаты точки B: ')
-# x_b = int(input('x = '))
-# y_b = int(input('y = '))
-#
-# ab = float(((x_b-x_a)*(x_b-x_a)+(y_b-y_a)*(y_b-y_a))**0.5)
-# ab = round(ab, 2)
-# print(f'A({x_a},{y_a}); B({x_b},{y_b}) -> {ab}')
+print('Введите координаты точки A: ')
+x_a = int(input('x = '))
+y_a = int(input('y = '))
+print('Введите координаты точки B: ')
+x_b = int(input('x = '))
+y_b = int(input('y = '))
+
+ab = float(((x_b-x_a)*(x_b-x_a)+(y_b-y_a)*(y_b-y_a))**0.5)
+ab = round(ab, 2)
+print(f'A({x_a},{y_a}); B({x_b},{y_b}) -> {ab}')
